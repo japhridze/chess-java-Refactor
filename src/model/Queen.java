@@ -1,4 +1,6 @@
+package model;
 
+import model.Board;
 
 import java.util.LinkedList;
 import java.util.List;

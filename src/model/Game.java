@@ -1,3 +1,6 @@
+package model;
+
+import view.StartMenu;
 
 import javax.swing.*;
 

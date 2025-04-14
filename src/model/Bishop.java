@@ -1,4 +1,8 @@
+package model;
 
+import model.Board;
+import model.Piece;
+import model.Square;
 
 import java.util.List;
 // chech to pull reaquestsss
