@@ -1,11 +1,9 @@
 package model;
 
-import model.Board;
-import model.Piece;
-import model.Square;
+
 
 import java.util.List;
-// chech to pull reaquestsss
+
 public class Bishop extends Piece {
 
     public Bishop(int color, Square initSq, String img_file) {

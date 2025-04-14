@@ -17,3 +17,20 @@ ant -f build.xml
 ```
 
 Then, run the executable .jar file, named _chess-java.jar_ to play.
+
+
+-------------------------------------------------
+
+I add Gamecontroller.java class in contorller layer which sperate the game logic (model) from user interface
+(view) and manage interaction between them. it acts as the "Controller" in Model-View-Controller(MVC) design pattern
+its main responsibility is to control game flow: handling moves, switching turns, and updating th UI accordingly.
+
+
+I add Color.java class which is Enum, actuallty has two collor white and black, 
+
+I add 6 helper method for improving existing project, this methods are: public Board getBoard()	; // return current board intance
+public boolean isGameOver()	; // chechk the game has ended like chackmate or stalemate
+public boolean makeMove(String move)	; // tries to move on board like e2 24 returns success/fails
+public Color getWinner()	; // return winner of the game 
+public void switchTurn()	;  // changes the turn to the next player( white with black and vica versa)
+public Color getCurrentPlayer()	; // returns whose turn it currently is WHITE or BLACK

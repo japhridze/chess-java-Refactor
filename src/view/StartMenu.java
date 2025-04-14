@@ -1,7 +1,5 @@
 package view;
 
-import view.GameWindow;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Image;
@@ -136,7 +134,7 @@ public class StartMenu implements Runnable {
                 int mm = Integer.parseInt((String) minutes.getSelectedItem());
                 int ss = Integer.parseInt((String) seconds.getSelectedItem());
                 
-                new GameWindow(bn, wn, hh, mm, ss);
+                new GameWindow();
                 startWindow.dispose();
             }
           });

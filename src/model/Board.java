@@ -32,8 +32,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	
 	// Logical and graphical representations of board
 	private final Square[][] board;
-    private final GameWindow g;
-    
+    private  GameWindow g;
+
     // List of pieces and whether they are movable
     public final LinkedList<Piece> Bpieces;
     public final LinkedList<Piece> Wpieces;
@@ -46,8 +46,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     private int currY;
     
     private CheckmateDetector cmd;
-    
-    public Board(GameWindow g) {
+
+    public Board() {
         this.g = g;
         board = new Square[8][8];
         Bpieces = new LinkedList<Piece>();
@@ -81,6 +81,14 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 
         whiteTurn = true;
 
+    }
+
+    public Board(Square[][] board, GameWindow g, LinkedList<Piece> bpieces, LinkedList<Piece> wpieces) {
+
+        this.board = board;
+        this.g = g;
+        Bpieces = bpieces;
+        Wpieces = wpieces;
     }
 
     private void initializePieces() {

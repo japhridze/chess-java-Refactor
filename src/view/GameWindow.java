@@ -1,6 +1,7 @@
 package view;
 
 import model.Board;
+import model.Color;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -13,6 +14,21 @@ import javax.swing.*;
 
 
 public class GameWindow {
+    public void showBoard(Board board) { /* display board */ }
+
+    public String getMoveInput(Color player) {
+        // Return a move string like "e2e4"
+        return "e2e4"; // placeholder
+    }
+
+    public void showInvalidMove() {
+        System.out.println("Invalid move. Try again.");
+    }
+
+    public void showWinner(Color winner) {
+        System.out.println("Winner: " + winner);
+    }
+
     private JFrame gameWindow;
     
     public Clock blackClock;
@@ -24,9 +40,12 @@ public class GameWindow {
     
     
     
-    public GameWindow(String blackName, String whiteName, int hh, 
-            int mm, int ss) {
-        
+    public GameWindow() {
+
+        int hh = 0;
+        int ss = 0;
+        int mm = 0;
+
         blackClock = new Clock(hh, ss, mm);
         whiteClock = new Clock(hh, ss, mm);
         
@@ -46,12 +65,14 @@ public class GameWindow {
         gameWindow.setLayout(new BorderLayout(20,20));
        
         // model.Game Data window
+        String blackName = null;
+        String whiteName = null;
         JPanel gameData = gameDataPanel(blackName, whiteName, hh, mm, ss);
         gameData.setSize(gameData.getPreferredSize());
         gameWindow.add(gameData, BorderLayout.NORTH);
-        
-        this.board = new Board(this);
-        
+
+        this.board = new Board();
+
         gameWindow.add(board, BorderLayout.CENTER);
         
         gameWindow.add(buttons(), BorderLayout.SOUTH);
@@ -63,8 +84,11 @@ public class GameWindow {
         gameWindow.pack();
         gameWindow.setVisible(true);
         gameWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
     }
-    
+
+
 // Helper function to create data panel
     
     private JPanel gameDataPanel(final String bn, final String wn, 
@@ -120,7 +144,7 @@ public class GameWindow {
                                     JOptionPane.YES_NO_OPTION);
                             
                             if (n == JOptionPane.YES_OPTION) {
-                                new GameWindow(bn, wn, hh, mm, ss);
+                                new GameWindow();
                                 gameWindow.dispose();
                             } else gameWindow.dispose();
                         }
@@ -138,7 +162,7 @@ public class GameWindow {
                                     JOptionPane.YES_NO_OPTION);
                             
                             if (n == JOptionPane.YES_OPTION) {
-                                new GameWindow(bn, wn, hh, mm, ss);
+                                new GameWindow();
                                 gameWindow.dispose();
                             } else gameWindow.dispose();
                         }

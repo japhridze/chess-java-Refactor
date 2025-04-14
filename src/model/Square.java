@@ -1,6 +1,5 @@
 package model;
 
-import model.Board;
 
 import java.awt.Color;
 import java.awt.Graphics;
