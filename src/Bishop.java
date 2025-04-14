@@ -1,7 +1,7 @@
 
 
 import java.util.List;
-// chech to pull reaquest
+// chech to pull reaquestsss
 public class Bishop extends Piece {
 
     public Bishop(int color, Square initSq, String img_file) {
