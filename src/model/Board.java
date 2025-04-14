@@ -1,4 +1,5 @@
 package model;
+import view.GameWindow;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
