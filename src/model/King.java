@@ -7,14 +7,13 @@ import java.util.List;
 
 public class King extends Piece {
 
-    public King(int color, Square initSq, String img_file) {
-        super(color, initSq, img_file);
+    public King(int color, Square initialSquare, String imagePath) {
+        super(color, initialSquare, imagePath);
     }
 
     @Override
     public List<Square> getLegalMoves(Board b) {
-LinkedList<Square> legalMoves = new LinkedList<Square>();
-        
+        LinkedList<Square> legalMoves = new LinkedList<Square>();
         Square[][] board = b.getSquareArray();
         
         int x = this.getPosition().getXNum();
