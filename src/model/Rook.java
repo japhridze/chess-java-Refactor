@@ -31,4 +31,7 @@ public class Rook extends Piece {
         return legalMoves;
     }
 
+    public boolean wasMoved() {
+        return false;
+    }
 }

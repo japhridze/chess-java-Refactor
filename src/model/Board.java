@@ -46,6 +46,16 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     private int currY;
     
     private CheckmateDetector cmd;
+    public void clearBoard() {
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
+                Square[][] squareArray = new Square[0][];
+                squareArray[y][x].removePiece();
+            }
+        }
+        Wpieces.clear();
+        Bpieces.clear();
+    }
 
     public Board() {
         this.g = g;
@@ -82,6 +92,7 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         whiteTurn = true;
 
     }
+
 
     public Board(Square[][] board, GameWindow g, LinkedList<Piece> bpieces, LinkedList<Piece> wpieces) {
 

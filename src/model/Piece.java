@@ -20,13 +20,21 @@ public abstract class Piece {
         this.currentSquare = initialSquare;
 
         try {
-            if (this.img == null) {
-                this.img = ImageIO.read(getClass().getResource(imagePath));
+            if (imagePath != null && !imagePath.isBlank()) {
+                var url = getClass().getResource(imagePath);
+                if (url != null) {
+                    this.img = ImageIO.read(url);
+                } else {
+                    System.out.println("Image file not found: " + imagePath);
+                    this.img = null; // Prevent crash
+                }
             }
         } catch (IOException e) {
-            System.err.println("Image load error: " + imagePath + " → " + e.getMessage());
+            System.out.println("Failed to load image: " + imagePath + " → " + e.getMessage());
+            this.img = null;
         }
     }
+
 
     public boolean move(Square targetSquare) {
         Piece occupyingPiece = targetSquare.getOccupyingPiece();
